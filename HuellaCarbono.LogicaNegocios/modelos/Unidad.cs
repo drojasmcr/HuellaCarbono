@@ -1,7 +1,8 @@
 ﻿namespace HuellaCarbono.LogicaNegocios.modelos
 {
-    public class Residencial : Ente
+    public enum Unidad
     {
-        
+        KgCO2xLitro,
+        KgCO2xKWH
     }
 }
