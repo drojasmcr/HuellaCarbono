@@ -5,4 +5,10 @@
         KgCO2xLitro,
         KgCO2xKWH
     }
+
+    public enum TipoActividad
+    {
+        ConsumoHogar,
+        ConsumoTransporte
+    }
 }
