@@ -37,5 +37,24 @@ namespace HuellaCarbono.LogicaNegocios.persistencia
             RepositorioActividades.Add(actividad);
             return 1;
         }
+
+        public Ente AgregarActividadAEnte(Actividad actividad, Ente ente)
+        {
+            Ente _ente = BuscarEnte(ente);
+            _ente.MisActividades.Add(actividad);
+            ActualizarEnte(_ente);
+            return _ente;
+        }
+
+        public int ActualizarEnte(Ente ente)
+        {
+            RemoverEnte(ente);
+            return AgregarEnte(ente);
+        }
+
+        public int RemoverEnte( Ente ente )
+        {
+            return RepositorioEntes.RemoveAll(item => item.Nombre == ente.Nombre);
+        }
     }
 }
