@@ -1,4 +1,5 @@
 ﻿using System;
+using HuellaCarbono.LogicaNegocios.controladores;
 using HuellaCarbono.LogicaNegocios.modelos;
 using HuellaCarbono.LogicaNegocios.persistencia;
 
@@ -11,15 +12,15 @@ namespace ConsoleAppPruebas
         {
             //Lo declaro aqui porq es una aplicacionde consola, en una de windows se debe declarar
             //una vez por pantalla como se ve en la pantalla principal
-            Repositorios repositorios = new Repositorios();
+            ControladorEnte controladorEnte = new ControladorEnte();
             //Agregar un ente
             var ente = new Empresa { Id = 1, Nombre = "Empresa 1" };
-            repositorios.AgregarEnte(ente);
+            controladorEnte.AgregarEnte(ente);
             //Agregar otro ente
             var ente2 = new Empresa { Id = 2, Nombre = "Empresa 2" };
-            repositorios.AgregarEnte(ente2);
+            controladorEnte.AgregarEnte(ente2);
             //Desplegar todos los entes
-            var listaEntes = repositorios.ObtenerEntes();
+            var listaEntes = controladorEnte.ObtenerTodosLosEntes();
             foreach (var item in listaEntes)
             {
                 Console.WriteLine("Id del ente: {0} -- Nombre del ente: {1}", item.Id, item.Nombre);
@@ -38,10 +39,11 @@ namespace ConsoleAppPruebas
                 UnidadDeActividad = Unidad.KgCO2xLitro
             };
 
+            ControladorActividad controladorActividad = new ControladorActividad();
             //Asocia la misma actividad a dos entes
-            repositorios.AgregarActividadAEnte(actividad, ente);
-            repositorios.AgregarActividadAEnte(actividad2, ente);
-            repositorios.AgregarActividadAEnte(actividad, ente2);
+            controladorActividad.AgregarActividadAEnte(ente, actividad);
+            controladorActividad.AgregarActividadAEnte(ente, actividad2);
+            
 
             //Desplegar actividades de un ente
             foreach (var item in ente.MisActividades)
