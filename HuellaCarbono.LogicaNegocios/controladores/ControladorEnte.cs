@@ -26,12 +26,12 @@ namespace HuellaCarbono.LogicaNegocios.controladores
 
         public List<Ente> ObtenerTodosLosEntes()
         {
-            return null;
+            return TodosLosRepositorios.ObtenerEntes();
         }
 
         public List<Ente> ObtenerTodosLosEntes( Type tipoEnte)
         {
-            return null;
+            return TodosLosRepositorios.ObtenerEntes(tipoEnte);
         }
     }
 }

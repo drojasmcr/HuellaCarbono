@@ -1,14 +1,13 @@
 ﻿using HuellaCarbono.LogicaNegocios.modelos;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace HuellaCarbono.LogicaNegocios.persistencia
 {
     public class Repositorios
     {
         public static List<Ente> RepositorioEntes { get; set; }
-        public static List<Actividad> RepositorioActividades { get; set; }
 
         public Repositorios()
         {
@@ -17,8 +16,7 @@ namespace HuellaCarbono.LogicaNegocios.persistencia
 
         public void InicializarRepositorios()
         {
-            RepositorioEntes = new List<Ente>();
-            RepositorioActividades = new List<Actividad>();
+            RepositorioEntes = new List<Ente>();            
         }
 
         public int AgregarEnte(Ente ente)
@@ -32,11 +30,6 @@ namespace HuellaCarbono.LogicaNegocios.persistencia
             return RepositorioEntes.Find(item => item.Nombre == ente.Nombre );
         }
 
-        public int AgregarActividad( Actividad actividad)
-        {
-            RepositorioActividades.Add(actividad);
-            return 1;
-        }
 
         public Ente AgregarActividadAEnte(Actividad actividad, Ente ente)
         {
@@ -46,6 +39,15 @@ namespace HuellaCarbono.LogicaNegocios.persistencia
             return _ente;
         }
 
+        internal List<Ente> ObtenerEntes()
+        {
+            return RepositorioEntes;
+        }
+
+        public List<Ente> ObtenerEntes(Type type)
+        {
+            return RepositorioEntes.FindAll(item => item.GetType() == type);
+        }
         public int ActualizarEnte(Ente ente)
         {
             RemoverEnte(ente);
