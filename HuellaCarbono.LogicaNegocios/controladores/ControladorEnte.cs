@@ -1,4 +1,5 @@
 ﻿using HuellaCarbono.LogicaNegocios.modelos;
+using HuellaCarbono.LogicaNegocios.persistencia;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,14 +8,20 @@ namespace HuellaCarbono.LogicaNegocios.controladores
 {
     public class ControladorEnte
     {
+        public static Repositorios TodosLosRepositorios{ get; set; }
+        public ControladorEnte()
+        {
+            if ( TodosLosRepositorios == null )
+                TodosLosRepositorios = new Repositorios();
+        }
         public int AgregarEnte ( Ente ente)
         {
-            return 0;
+            return TodosLosRepositorios.AgregarEnte(ente);
         }
 
         public Ente BuscarEnte ( Ente ente)
         {
-            return null;
+            return TodosLosRepositorios.BuscarEnte(ente);
         }
 
         public List<Ente> ObtenerTodosLosEntes()
