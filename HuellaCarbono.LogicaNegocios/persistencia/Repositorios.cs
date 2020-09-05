@@ -21,6 +21,8 @@ namespace HuellaCarbono.LogicaNegocios.persistencia
 
         public int AgregarEnte(Ente ente)
         {
+            if (ente.MisActividades == null)
+                ente.MisActividades = new List<Actividad>();
             RepositorioEntes.Add(ente);
             return 1;
         }
@@ -46,7 +48,7 @@ namespace HuellaCarbono.LogicaNegocios.persistencia
             return _ente;
         }
 
-        internal List<Ente> ObtenerEntes()
+        public List<Ente> ObtenerEntes()
         {
             return RepositorioEntes;
         }

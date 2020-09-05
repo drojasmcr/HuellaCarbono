@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuellaCarbono.LogicaNegocios", "HuellaCarbono.LogicaNegocios\HuellaCarbono.LogicaNegocios.csproj", "{68CFF46A-A25D-4FC3-8C8A-192E35EF5920}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppPruebas", "ConsoleAppPruebas\ConsoleAppPruebas.csproj", "{5F1DDD4F-24CF-4554-B148-73180201921F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{68CFF46A-A25D-4FC3-8C8A-192E35EF5920}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68CFF46A-A25D-4FC3-8C8A-192E35EF5920}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68CFF46A-A25D-4FC3-8C8A-192E35EF5920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1DDD4F-24CF-4554-B148-73180201921F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1DDD4F-24CF-4554-B148-73180201921F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1DDD4F-24CF-4554-B148-73180201921F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1DDD4F-24CF-4554-B148-73180201921F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

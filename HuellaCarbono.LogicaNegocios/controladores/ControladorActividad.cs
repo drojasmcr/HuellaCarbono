@@ -1,8 +1,6 @@
 ﻿using HuellaCarbono.LogicaNegocios.modelos;
 using HuellaCarbono.LogicaNegocios.persistencia;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace HuellaCarbono.LogicaNegocios.controladores
 {
@@ -18,5 +16,6 @@ namespace HuellaCarbono.LogicaNegocios.controladores
         {
             return repositorios.RemoverActividadDeEnte(ente, actividad);
         }
+        
     }
 }
